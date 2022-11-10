@@ -30,9 +30,9 @@ const onFeedbackFormSubmit = event => {
     console.log(lsMethods.load(FEEDBACK_FORM_KEY));
     lsMethods.remove(FEEDBACK_FORM_KEY)
     feedbackFormEl.reset();
-    userData.name = "";
-    userData.value = "";
+    userData.email = "";
+    userData.message = "";
 };
 
-feedbackFormEl.addEventListener('input', throttle(onFormFieldChange, 2000));
+feedbackFormEl.addEventListener('input', throttle(onFormFieldChange, 500));
 feedbackFormEl.addEventListener('submit', onFeedbackFormSubmit);
