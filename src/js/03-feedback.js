@@ -6,7 +6,7 @@ const FEEDBACK_FORM_KEY = "feedback-form-state"
 const userData = {};
 
 (() => {
-    feedbackFormDataFromLS = lsMethods.load(FEEDBACK_FORM_KEY);
+    const feedbackFormDataFromLS = lsMethods.load(FEEDBACK_FORM_KEY);
     for (const prop in feedbackFormDataFromLS) {
         if (feedbackFormDataFromLS.hasOwnProperty(prop)) {
             feedbackFormEl.elements[prop].value = feedbackFormDataFromLS[prop];
