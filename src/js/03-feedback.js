@@ -10,6 +10,7 @@ const userData = {};
     for (const prop in feedbackFormDataFromLS) {
         if (feedbackFormDataFromLS.hasOwnProperty(prop)) {
             feedbackFormEl.elements[prop].value = feedbackFormDataFromLS[prop];
+            userData[prop] = feedbackFormDataFromLS[prop];
         }
     }
 })();
@@ -29,6 +30,8 @@ const onFeedbackFormSubmit = event => {
     console.log(lsMethods.load(FEEDBACK_FORM_KEY));
     lsMethods.remove(FEEDBACK_FORM_KEY)
     feedbackFormEl.reset();
+    userData.name = "";
+    userData.value = "";
 };
 
 feedbackFormEl.addEventListener('input', throttle(onFormFieldChange, 2000));
